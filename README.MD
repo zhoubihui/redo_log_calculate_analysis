@@ -5,7 +5,7 @@
 <br>
 <br>
 
-#### 1. redo结构计算: [redo struct](https://github.com/zhoubihui/redo_log_calculate_analysis/blob/master/redo_struct.md)
+#### 1. redo结构计算: [redo struct](https://github.com/zhoubihui/redo_log_calculate_analysis/blob/master/redo_struct.md) (demo已上传demo/redo_struct)
 
 #### 2. BBED使用
 
