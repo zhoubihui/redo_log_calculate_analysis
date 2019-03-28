@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/zhoubihui/VSCodeProjects/c++/redo_struct/main.cc
+iostream
+-
+fstream
+-
+thread
+-
+src/include/oracle_extract.h
+/Users/zhoubihui/VSCodeProjects/c++/redo_struct/src/include/oracle_extract.h
+
+/Users/zhoubihui/VSCodeProjects/c++/redo_struct/src/include/oracle_extract.h
+fstream
+-
+map
+-
+memory
+-
+
