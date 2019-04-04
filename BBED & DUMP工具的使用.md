@@ -112,7 +112,9 @@ $ ./dump /Users/zhoubihui/redo/redo01.log 2 4
 表示dump 2,3,4,5块。
 ```
 
+
 # 转储日志文件工具-dump
+## 使用
 &emsp;&emsp;个人使用习惯如下：  
 1.执行DML操作之前先查询当前日志文件的序列号和块号
 
@@ -147,4 +149,51 @@ SQL> oradebug tracefile_name;
 2.dump的方式有很多种，这种是我最常用的同时也是我觉得比较方便的。
 3.每次dump需要退出连接，因为生成的文件名是根据会话ID生成的，不重新登录的话，所有dump的数据都在同一个文件里，不够直观。
 4.如果只执行一个insert操作，但是redo写了几百个块，例如上述例子中，这个时候说明oracle自身在对数据库做一些操作，如果新手在这几百个块中找一条insert记录的话，是比较难找的。所以可以通过多执行几次上述操作，只要写的redo块数比较少，dump出来的数据也是比较容易找到自己想要的那条记录。
+```
+
+## 例子
+
+```
+REDO RECORD - Thread:1 RBA: 0x000007.000000f9.0010 LEN: 0x0224 VLD: 0x0d
+SCN: 0x0000.000fbebd SUBSCN:  1 04/04/2019 18:22:15
+CHANGE #1 TYP:2 CLS:1 AFN:1 DBA:0x004007d9 OBJ:287 SCN:0x0000.000fbea6 SEQ:2 OP:11.5 ENC:0 RBL:0
+KTB Redo
+op: 0x11  ver: 0x01
+compat bit: 4 (post-11) padding: 1
+op: F  xid:  0x0009.001.00000330    uba: 0x00c029d9.0086.24
+Block cleanout record, scn:  0x0000.000fbebc ver: 0x01 opt: 0x02, entries follow...
+  itli: 2  flg: 2  scn: 0x0000.000fbea6
+KDO Op code: URP row dependencies Disabled
+  xtype: XA flags: 0x00000000  bdba: 0x004007d9  hdba: 0x004007d8
+itli: 1  ispac: 0  maxfr: 4863
+tabn: 0 slot: 2(0x2) flag: 0x2c lock: 1 ckix: 11
+ncol: 19 nnew: 1 size: 7
+col  5: [ 7]  78 77 04 04 13 17 10
+CHANGE #2 TYP:0 CLS:33 AFN:3 DBA:0x00c00100 OBJ:4294967295 SCN:0x0000.000fbe8b SEQ:2 OP:5.2 ENC:0 RBL:0
+ktudh redo: slt: 0x0001 sqn: 0x00000330 flg: 0x0012 siz: 156 fbi: 0
+            uba: 0x00c029d9.0086.24    pxid:  0x0000.000.00000000
+CHANGE #3 TYP:0 CLS:33 AFN:3 DBA:0x00c00100 OBJ:4294967295 SCN:0x0000.000fbebd SEQ:1 OP:5.4 ENC:0 RBL:0
+ktucm redo: slt: 0x0001 sqn: 0x00000330 srt: 0 sta: 9 flg: 0x2 ktucf redo: uba: 0x00c029d9.0086.24 ext: 2 spc: 3270 fbi: 0
+CHANGE #4 TYP:0 CLS:34 AFN:3 DBA:0x00c029d9 OBJ:4294967295 SCN:0x0000.000fbe8b SEQ:3 OP:5.1 ENC:0 RBL:0
+ktudb redo: siz: 156 spc: 3428 flg: 0x0012 seq: 0x0086 rec: 0x24
+            xid:  0x0009.001.00000330
+ktubl redo: slt: 1 rci: 0 opc: 11.1 [objn: 287 objd: 287 tsn: 0]
+Undo type:  Regular undo        Begin trans    Last buffer split:  No
+Temp Object:  No
+Tablespace Undo:  No
+             0x00000000  prev ctl uba: 0x00c029d9.0086.21
+prev ctl max cmt scn:  0x0000.000f6a42  prev tx cmt scn:  0x0000.000f6a5a
+txn start scn:  0x0000.00000000  logon user: 0  prev brb: 12593621  prev bcl: 0 BuExt idx: 0 flg2: 0
+KDO undo record:
+KTB Redo
+op: 0x04  ver: 0x01
+compat bit: 4 (post-11) padding: 1
+op: L  itl: xid:  0x0001.000.0000026a uba: 0x00c02332.0075.04
+                      flg: C---    lkc:  0     scn: 0x0000.000fbe9a
+KDO Op code: URP row dependencies Disabled
+  xtype: XA flags: 0x00000000  bdba: 0x004007d9  hdba: 0x004007d8
+itli: 1  ispac: 0  maxfr: 4863
+tabn: 0 slot: 2(0x2) flag: 0x2c lock: 0 ckix: 11
+ncol: 19 nnew: 1 size: -7
+col  5: *NULL*
 ```
