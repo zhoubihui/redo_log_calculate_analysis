@@ -7,18 +7,22 @@
 
 #### 1. redo结构计算: [redo struct](https://github.com/zhoubihui/redo_log_calculate_analysis/blob/master/redo_struct.md) (demo已上传demo/redo_struct)
 
-#### 2. change分析
+#### 2. BBED & DUMP 工具的使用: [bbed & dump](https://github.com/zhoubihui/redo_log_calculate_analysis/blob/master/BBED%20%26%20DUMP%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8.md)
 
-#### 3. rowid的计算
+#### 3. 常见change分析
 
-#### 4. oracle常用数据类型的底层存储与转换
+#### 4. 
 
-#### 5. redo怎么区分事务
+#### 4. rowid的计算
 
-#### 6. IMU模式与非IMU模式下redo record的不同
+#### 5. oracle常用数据类型的底层存储与转换
 
-#### 7. undo segment、undo block、data block的联系
+#### 6. redo怎么区分事务
 
-#### 8. 完整事务计算,并根据事务构建SQL
+#### 7. IMU模式与非IMU模式下redo record的不同
 
-#### 9. DDL语句产生的redo浅析
+#### 8. undo segment、undo block、data block的联系
+
+#### 9. 完整事务计算,并根据事务构建SQL
+
+#### 10. DDL语句产生的redo浅析
