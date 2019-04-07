@@ -11,7 +11,7 @@
 
 #### 3. 常见change分析
 
-#### 4. rowid的计算
+#### 4. rowid的计算:[rowid_calculate](https://github.com/zhoubihui/redo_log_calculate_analysis/blob/master/rowid%E7%9A%84%E8%AE%A1%E7%AE%97.md)
 
 #### 5. oracle常用数据类型的底层存储与转换
 
