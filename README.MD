@@ -9,7 +9,7 @@
 
 #### 2. BBED & DUMP 工具的使用: [bbed & dump](https://github.com/zhoubihui/redo_log_calculate_analysis/blob/master/BBED%20%26%20DUMP%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8.md)
 
-#### 3. 常见change分析
+#### 3. 常见change分析:[change_struct](https://github.com/zhoubihui/redo_log_calculate_analysis/blob/master/change_struct.md)
 
 #### 4. rowid的计算:[rowid_calculate](https://github.com/zhoubihui/redo_log_calculate_analysis/blob/master/rowid%E7%9A%84%E8%AE%A1%E7%AE%97.md)
 
